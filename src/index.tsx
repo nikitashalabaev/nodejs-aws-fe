@@ -8,17 +8,17 @@ import * as serviceWorker from './serviceWorker';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from 'axios';
 
-axios.interceptors.response.use(
-  response => {
-    return response;
-  },
-  function(error) {
-    if (error.response.status === 400) {
-      alert(error.response.data?.data);
-    }
-    return Promise.reject(error.response);
-  }
-);
+// axios.interceptors.response.use(
+//   response => {
+//     return response;
+//   },
+//   function(error) {
+//     if (error.response.status === 400) {
+//       alert(error.response.data?.data);
+//     }
+//     return Promise.reject(error.response);
+//   }
+// );
 
 ReactDOM.render(
   <React.StrictMode>
