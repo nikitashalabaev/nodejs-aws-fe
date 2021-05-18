@@ -105,8 +105,8 @@ export default function PageOrder() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const onChangeStatus = (values: FormikValues) => {
-    return axios.put(`${API_PATHS.order}/order/${order.id}/status`, values)
-      .then(({data}) => setOrder(data));
+    // return axios.put(`${API_PATHS.order}/order/${order.id}/status`, values)
+    //   .then(({data}) => setOrder(data));
   };
 
   useEffect(() => {
@@ -115,8 +115,8 @@ export default function PageOrder() {
       return;
     }
     const promises: any[] = [
-      axios.get(`${API_PATHS.product}/product`),
-      axios.get(`${API_PATHS.order}/order/${id}`)
+      axios.get(`${API_PATHS.products}`),
+      // axios.get(`${API_PATHS.order}/order/${id}`)
     ];
     Promise.all(promises)
       .then(([{data: products}, {data: order}]) => {
